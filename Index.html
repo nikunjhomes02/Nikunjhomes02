@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikunj Homes | Find Your Dream Property</title>
+<meta name="description" content="Nikunj Homes - Homes, plots, flats and commercial properties.">
+<style>
+:root{
+  --navy:#0B1F3A; --blue:#1D4ED8; --gold:#D4A72C;
+  --light:#F5F7FA; --text:#1F2937; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(11,31,58,.98);color:#fff;box-shadow:0 3px 15px #0002}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:800;letter-spacing:.4px}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:14px;font-weight:600;color:#fff}
+nav a:hover{color:var(--gold)}
+.menu{display:none;font-size:28px;cursor:pointer}
+.btn{display:inline-block;padding:12px 21px;border-radius:7px;font-weight:700;border:0;cursor:pointer}
+.btn-gold{background:var(--gold);color:#111}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-outline{border:1px solid #fff;color:#fff}
+.hero{
+  min-height:650px;display:flex;align-items:center;color:#fff;
+  background:linear-gradient(90deg,rgba(4,18,36,.9),rgba(4,18,36,.45)),
+  url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+.hero-content{max-width:700px;padding:80px 0}
+.badge{display:inline-block;background:#ffffff18;border:1px solid #ffffff55;padding:7px 14px;border-radius:30px;margin-bottom:18px}
+h1{font-size:clamp(40px,6vw,70px);line-height:1.08;margin-bottom:20px}
+.hero p{font-size:19px;max-width:650px;color:#eef2f7;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:80px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+.section-head h2{font-size:36px;color:var(--navy);margin-bottom:10px}
+.section-head p{color:#667085}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 28px #0b1f3a12;border:1px solid #e8ebef}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:21px}
+.card h3{color:var(--navy);font-size:21px;margin-bottom:7px}
+.location{color:#687386;font-size:14px;margin-bottom:12px}
+.price{font-size:21px;font-weight:800;color:var(--blue);margin:10px 0}
+.features{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:#555;margin-bottom:17px}
+.features span{background:var(--light);padding:5px 9px;border-radius:5px}
+.light{background:var(--light)}
+.values .card{text-align:center;padding:28px}
+.icon{font-size:34px;margin-bottom:10px}
+.locations .card{position:relative;min-height:170px;display:flex;align-items:end;padding:24px;color:#fff;background-size:cover;background-position:center}
+.locations .card:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#000b)}
+.locations .card>*{position:relative;z-index:1}
+.location-card h3{color:#fff}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{font-size:40px;margin-bottom:10px}
+.cta p{color:#dce5f0;margin-bottom:25px}
+form{max-width:850px;margin:auto;background:#fff;padding:30px;border-radius:14px;box-shadow:0 8px 30px #00000012}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #d6dbe2;border-radius:7px;font:inherit}
+textarea{min-height:120px;resize:vertical}
+.full{grid-column:1/-1}
+footer{background:#07172b;color:#d7deea;padding:45px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+footer h3{color:#fff;margin-bottom:12px}
+footer a{display:block;margin:7px 0;color:#cbd5e1}
+.copy{text-align:center;border-top:1px solid #ffffff1a;margin-top:30px;padding-top:18px;font-size:13px}
+.whatsapp{position:fixed;right:22px;bottom:22px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;z-index:999;box-shadow:0 5px 20px #0004}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);padding:20px;flex-direction:column;align-items:flex-start}
+ nav.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}.hero{min-height:580px}
+}
+@media(max-width:560px){
+ .grid,.form-grid,.footer-grid{grid-template-columns:1fr}
+ section{padding:60px 0}.hero-content{padding:60px 0}h1{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+  <a href="#home" class="logo">NIKUNJ <span>HOMES</span></a>
+  <div class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#properties">Properties</a>
+    <a href="#projects">Projects</a>
+    <a href="#locations">Locations</a>
+    <a href="#about">About Us</a>
+    <a href="#contact" class="btn btn-gold">Contact Us</a>
+  </nav>
+</div>
+</header>
+
+<main>
+<section id="home" class="hero">
+<div class="container">
+<div class="hero-content">
+<span class="badge">Trusted Real Estate Solutions</span>
+<h1>Find Your Dream Property</h1>
+<p>Homes, plots, flats and commercial properties in prime locations. Discover the right property at the right location and the right price.</p>
+<div class="actions">
+<a href="#properties" class="btn btn-gold">View Properties</a>
+<a href="#contact" class="btn btn-outline">Enquire Now</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="properties">
+<div class="container">
+<div class="section-head">
+<h2>Featured Properties</h2>
+<p>Explore selected property opportunities from Nikunj Homes.</p>
+</div>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Modern house">
+<div class="card-body"><h3>Premium Family Villa</h3><div class="location">📍 Dharuhera</div><div class="features"><span>4 BHK</span><span>2400 Sq.Ft.</span><span>Parking</span></div><div class="price">₹ 1.25 Cr*</div><a class="btn btn-blue" href="#contact">Enquire Now</a></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Luxury interior">
+<div class="card-body"><h3>Modern 3 BHK Apartment</h3><div class="location">📍 Bhiwadi</div><div class="features"><span>3 BHK</span><span>1650 Sq.Ft.</span><span>Lift</span></div><div class="price">₹ 72 Lakh*</div><a class="btn btn-blue" href="#contact">Enquire Now</a></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Residential plot">
+<div class="card-body"><h3>Residential Plot</h3><div class="location">📍 Rewari</div><div class="features"><span>200 Sq.Yd.</span><span>Gated</span><span>Road Facing</span></div><div class="price">₹ 38 Lakh*</div><a class="btn btn-blue" href="#contact">Enquire Now</a></div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="projects" class="light">
+<div class="container">
+<div class="section-head"><h2>Property Categories</h2><p>Choose the type of property that matches your requirement.</p></div>
+<div class="grid">
+<div class="card values"><div class="icon">🏡</div><h3>Residential</h3><p>Flats, independent houses, builder floors and villas.</p></div>
+<div class="card values"><div class="icon">📐</div><h3>Plots</h3><p>Residential and investment plots in promising locations.</p></div>
+<div class="card values"><div class="icon">🏢</div><h3>Commercial</h3><p>Shops, offices, showrooms and commercial opportunities.</p></div>
+</div>
+</div>
+</section>
+
+<section id="locations" class="locations">
+<div class="container">
+<div class="section-head"><h2>Popular Locations</h2><p>Explore properties across key growth corridors.</p></div>
+<div class="grid">
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80')"><div><h3>Dharuhera</h3><p>Plots • Flats • Houses</p></div></div>
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80')"><div><h3>Rewari</h3><p>Residential • Commercial</p></div></div>
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=900&q=80')"><div><h3>Bhiwadi</h3><p>Flats • Plots • Investment</p></div></div>
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80')"><div><h3>Gurugram</h3><p>Residential • Commercial</p></div></div>
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80')"><div><h3>Manesar</h3><p>Plots • Investment</p></div></div>
+<div class="card location-card" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80')"><div><h3>Neemrana</h3><p>Investment • Commercial</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="light">
+<div class="container">
+<div class="section-head">
+<h2>Your Trusted Property Partner</h2>
+<p>Nikunj Homes is committed to helping customers find the right property at the right location and the right price.</p>
+</div>
+<div class="grid">
+<div class="card values"><div class="icon">🤝</div><h3>Trust</h3><p>Transparent and customer-focused property dealings.</p></div>
+<div class="card values"><div class="icon">🔎</div><h3>Genuine Properties</h3><p>Carefully selected opportunities for buyers and investors.</p></div>
+<div class="card values"><div class="icon">⭐</div><h3>Professional Support</h3><p>Support from property enquiry through the buying process.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-head"><h2>Find Your Next Property</h2><p>Send your requirement and our property consultant will contact you.</p></div>
+<form onsubmit="submitForm(event)">
+<div class="form-grid">
+<input required id="name" placeholder="Full Name">
+<input required id="phone" placeholder="Mobile Number">
+<input id="email" type="email" placeholder="Email Address">
+<select id="requirement"><option>Buy</option><option>Rent</option><option>Investment</option></select>
+<select id="type"><option>Flat</option><option>House</option><option>Plot</option><option>Villa</option><option>Commercial</option></select>
+<input id="location" placeholder="Preferred Location">
+<input id="budget" placeholder="Budget">
+<textarea class="full" id="message" placeholder="Tell us about your requirement"></textarea>
+<div class="full"><button class="btn btn-blue" type="submit">Submit Enquiry</button></div>
+</div>
+</form>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2>Ready to Find Your Dream Property?</h2>
+<p>Talk to Nikunj Homes today.</p>
+<a href="#contact" class="btn btn-gold">Start Your Enquiry</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h3>NIKUNJ HOMES</h3><p>Homes • Plots • Flats • Commercial Properties</p><p style="margin-top:10px">Trusted property solutions with a focus on transparency and customer service.</p></div>
+<div><h3>Quick Links</h3><a href="#properties">Properties</a><a href="#projects">Categories</a><a href="#locations">Locations</a><a href="#about">About Us</a></div>
+<div><h3>Contact</h3><p>📞 [9718183182]</p><p>💬 [9718183182]</p><p>✉️ [nikunjhomes02@gmail.com]</p><p>📍 [SCO - 1,MGH Housing,Dharuhera-123106]</p></div>
+</div>
+<div class="copy">© 2026 Nikunj Homes. All rights reserved.</div>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/9718183182" target="_blank" aria-label="WhatsApp">☏</a>
+
+<script>
+function submitForm(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value;
+ const phone=document.getElementById('phone').value;
+ const req=document.getElementById('requirement').value;
+ const type=document.getElementById('type').value;
+ const loc=document.getElementById('location').value;
+ const budget=document.getElementById('budget').value;
+ const msg=document.getElementById('message').value;
+ const text=`Hello Nikunj Homes,%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone)}%0ARequirement: ${encodeURIComponent(req)}%0AProperty: ${encodeURIComponent(type)}%0ALocation: ${encodeURIComponent(loc)}%0ABudget: ${encodeURIComponent(budget)}%0AMessage: ${encodeURIComponent(msg)}`;
+ window.open('https://wa.me/9718183182?text='+text,'_blank');
+}
+<a href="https://wa.me/919718183182"
+   target="_blank"
+   class="btn btn-whatsapp">
+   💬 WhatsApp Nikunj Homes
+</a>
+</script>
+</body>
+</html>
